@@ -1,0 +1,51 @@
+EXPERIMENT 6 - DOCKER CONTAINERIZATION
+QUICK RUN GUIDE (ABOUT 5 MINUTES)
+=================================
+
+AIM
+Run the Flask web application in a Docker container.
+
+REQUIREMENTS
+Docker Desktop must be open and show "Engine running".
+
+OPTION A - START THE EXISTING CONTAINER
+1. Open Git Bash.
+2. Run:
+   docker start ase-docker-expt6-container
+3. Check:
+   docker ps
+4. Open in your browser:
+   http://localhost:5000
+
+EXPECTED OUTPUT IN THE BROWSER
+   Welcome to Docker
+
+If Docker says the container does not exist, run:
+   docker ps -a
+Use the exact existing container name shown there.
+
+OPTION B - BUILD AND RUN USING THIS FOLDER
+1. Open Git Bash and go to the experiment folder:
+   cd ~/ASE_LAB_Combined/Experiment_6_Docker
+2. Build the image:
+   docker build -t ase-docker-expt6:1.0 .
+3. Run the container:
+   docker run -d --name ase-docker-expt6-container -p 5000:5000 ase-docker-expt6:1.0
+4. Check:
+   docker ps
+5. Open:
+   http://localhost:5000
+
+If the name is already in use, start the existing container instead:
+   docker start ase-docker-expt6-container
+
+STOP THE CONTAINER AFTER THE DEMONSTRATION
+   docker stop ase-docker-expt6-container
+
+WHAT TO SHOW THE LECTURER
+- Docker Desktop showing the container
+- Output of docker ps
+- Browser showing "Welcome to Docker"
+
+NOTE
+Docker Desktop must remain running while the container is being used.
