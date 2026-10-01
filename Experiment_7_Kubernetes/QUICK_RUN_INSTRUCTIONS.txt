@@ -1,0 +1,53 @@
+EXPERIMENT 7 - KUBERNETES POD DEPLOYMENT
+QUICK RUN GUIDE (ABOUT 5 MINUTES, IF THE CLUSTER IS ALREADY STARTED)
+====================================================================
+
+AIM
+Deploy an NGINX Pod and access it through Kubernetes port forwarding.
+
+REQUIREMENTS
+Docker Desktop, Minikube, and kubectl installed.
+
+1. START THE CLUSTER
+   minikube start --driver=docker
+
+2. CHECK THE NODE
+   kubectl get nodes
+Expected: minikube should show Ready.
+
+3. GO TO THE EXPERIMENT FOLDER
+   cd ~/ASE_LAB_Combined/Experiment_7_Kubernetes
+
+4. APPLY THE POD CONFIGURATION
+   kubectl apply -f pod.yaml
+
+5. CHECK THE POD
+   kubectl get pods
+Expected: nginx should eventually show READY 1/1 and STATUS Running.
+
+6. FORWARD THE PORT
+   kubectl port-forward pod/nginx 8080:80
+Keep this terminal open while demonstrating.
+
+7. OPEN THE BROWSER
+   http://localhost:8080
+
+EXPECTED OUTPUT
+The NGINX Welcome page.
+
+AFTER THE DEMONSTRATION
+Press Ctrl+C in the port-forward terminal, then run:
+   minikube stop
+
+IF THE POD DOES NOT BECOME RUNNING
+   kubectl describe pod nginx
+   kubectl get pods
+
+WHAT TO SHOW THE LECTURER
+- Output of kubectl get nodes
+- Output of kubectl get pods
+- Browser showing the NGINX Welcome page
+
+NOTE
+The first minikube start can take longer than five minutes if images need
+to be downloaded or the cluster needs initialization.
