@@ -1,0 +1,57 @@
+EXPERIMENT 5 - GITFLOW WORKFLOW
+QUICK RUN GUIDE (ABOUT 5 MINUTES)
+=================================
+
+AIM
+Show the Gitflow branches and run the sample Python program.
+
+REQUIREMENTS
+Git and Python installed; internet connection for cloning.
+
+1. OPEN GIT BASH AND CLONE THE ORIGINAL REPOSITORY
+   git clone https://github.com/Nitish2406/Gitflow_Lab_ASE_LAB5.git
+   cd Gitflow_Lab_ASE_LAB5
+
+2. FETCH AND SHOW BRANCHES
+   git fetch --all
+   git branch -a
+
+3. SWITCH TO MAIN
+   git switch main
+   git status
+
+4. SHOW THE DEVELOP BRANCH
+   git switch --track origin/develop
+   git branch
+   If Git says the local develop branch already exists, run:
+   git switch develop
+
+5. SHOW THE FEATURE BRANCHES
+   git branch -a
+   To inspect a feature branch, use:
+   git switch --track origin/feature/login
+   If it already exists locally, use:
+   git switch feature/login
+
+   To inspect the other feature branch, switch back and run:
+   git switch main
+   git switch --track origin/feature/conflict
+   If it already exists locally, use:
+   git switch feature/conflict
+
+6. RUN THE PYTHON PROGRAM
+   From a branch containing app.py, run:
+   python app.py
+
+EXPECTED OUTPUT
+   Welcome Student
+
+WHAT TO SHOW THE LECTURER
+- The output of git branch -a
+- Switching branches with git switch
+- The output of python app.py
+- The output of git status
+
+NOTE
+Use this cloned original repository to demonstrate branch history.
+The combined ASE_LAB folder is for collecting the experiment files.
